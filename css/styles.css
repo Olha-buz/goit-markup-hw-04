@@ -113,7 +113,7 @@ section{
 }
 
 .header-nav {
-    font-weight: 500;
+
     display: flex;
     align-items: center;
     gap: 76px;
@@ -159,14 +159,14 @@ section{
     line-height: 1.5;
     letter-spacing: 0.02em;
     padding: 24px 0;
-    margin-bottom: 20px;
+
 }
 
 .header-link::after {
     content: "";
     position: absolute;
     bottom: 0;
-    transform: translateY(-100%);
+    
     left: 0px;
     width: 100%;
     height: 4px;
@@ -372,14 +372,6 @@ section{
 
 }
 
-
-/*
-.benefits-title {
-    letter-spacing: 0.02em;
-    display: none;
-}
-*/
-
 .visually-hidden {
     position: absolute;
     width: 1px;
@@ -555,7 +547,9 @@ section{
 }
 
 .link-icon-team {
-    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 50%;
     background-color: var(--iris);
     width: 40px;
@@ -568,11 +562,6 @@ section{
 }
 
 .icon-team {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
     fill: var(--cloud);
 }
 
@@ -608,7 +597,9 @@ section{
 }
 
 .link-customers{
-    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 168px;
     height: 88px;
     border-radius: 4px;
@@ -617,10 +608,6 @@ section{
 }
 
 .cust-icon {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     fill: var(--light-slate);
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -659,7 +646,6 @@ section{
 /*footer div1*/
 .logo-link{
     display: inline-block;
-    margin-bottom: 16px;
 }
 
 .logo-white{
@@ -677,7 +663,7 @@ section{
 /*footer div2*/
 
 .social-icons-footer {
-    
+    padding-top: 24px;
 }
 
 .social-text-footer {
@@ -699,7 +685,9 @@ section{
 }
 
 .link-icon-footer {
-    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 40px;
     height: 40px;
     background-color: var(--iris);
@@ -707,18 +695,13 @@ section{
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.link-icon-footer:hover .icon-circle-footer {
+.link-icon-footer:hover {
     background-color: var(--green);
 
 }
 
 .icon-footer{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     fill: var(--cloud);
-
 }
 
 /*PORTFOLIO*/
@@ -726,20 +709,14 @@ section{
 .main-page {
     padding-top: 100px;
     padding-bottom: 120px;
-
 }
 
 .main-portfolio {
-    
-
     color: var(--slate);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    
-
-    
 }
 
 /*BUTTON LIST*/
