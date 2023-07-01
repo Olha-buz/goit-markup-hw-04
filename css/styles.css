@@ -62,38 +62,7 @@ section{
 .list {
     list-style: none;
 }
-/*
-@keyframes changeHeaderColor {
-    0%{
-        background-color: transparent;
-    }
 
-    50%{
-        background-color: rgba(64, 75, 191, 1, 0.5);
-    }
-    100%{
-        background-color: var(--ocean);
-    }
-}
-
-@keyframes changeCustomersColor {
-    0%{
-        color: var(--light-slate);
-    }
-    100%{
-        color: var(--ocean);
-    }
-}
-
-@keyframes changeSocialColor {
-    0%{
-        background-color: var(--iris);
-    }
-    100%{
-        background-color: var(--green);
-    }
-}
-*/
 
 /* HEADER */
 
@@ -188,6 +157,13 @@ section{
 
 }
 
+.active::after {
+    background-color: var(--ocean);
+}
+.active {
+    color: var(--ocean);
+}
+
 .header-link:hover{
     color: var(--ocean);
 }
@@ -245,6 +221,7 @@ section{
     background-size: cover;
     padding: 188px 0;
     background-color: var(--navy-blue);
+    max-width: 1440px;
     
 }
 
@@ -303,79 +280,15 @@ section{
     background-color: var(--ocean);
 }
 
-/*MODAL WINDOW*/
-
-.backdrop {
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    transform: translateY(-165px);
-    background-color: rgba(46, 47, 66, 0.40);
-}
-
-.is-hidden {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-
-
-}
-
-.modal {
-    position: absolute;
-    bottom: 13px;
-    left: 50%;
-    transform: translateX(-50%);
-    
-    width: 408px;
-    height: 584px;
-    border-radius: 4px;
-    background: var(--dairy, #FCFCFC);
-    box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.20), 
-                0px 1px 3px 0px rgba(0, 0, 0, 0.12), 
-                0px 1px 1px 0px rgba(0, 0, 0, 0.14);
-}
-
-.close {
-    position: absolute;
-    top:0;
-    right:0;
-    transform: translate(-24px, 24px);
-    width: 24px;
-    height: 24px;
-    border-radius: 24px;
-    border: 1px solid rgba(0, 0, 0, 0.10);
-    background-color: var(--cornflower);
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-                border 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    cursor: pointer;
-}
-
-.icon-modal {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    fill: var(--navy-blue);
-    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.close:active {
-    background-color: var(--ocean);
-    border: 0;
-}
-
-.close:active .icon-modal {
-    fill: var(--white);
-}
 
 /*SECTION BENEFITS*/
 
 .section-benefits{
     padding: 120px 0;
 
+}
+
+.div-benefits {
 }
 
 .visually-hidden {
@@ -426,7 +339,7 @@ section{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--cornflower);
+    background-color: var(--cloud);
     border-radius: 4px;
     width: 264px;
     height: 112px;
@@ -521,7 +434,7 @@ section{
 }
 
 .name-team{
-    padding: 32px 16px;
+    padding: 32px 0;
 
 }
 
@@ -562,7 +475,8 @@ section{
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.link-icon-team:hover {
+.link-icon-team:hover,
+.link-icon-team:focus {
     background-color: var(--ocean);
 }
 
@@ -623,7 +537,8 @@ section{
     fill: currentColor;
 }
 
-.link-customers:hover {
+.link-customers:hover,
+.link-customers:focus {
     border-color: var(--ocean);
     color: var(--ocean);
 }
@@ -714,6 +629,89 @@ section{
     fill: var(--cloud);
 }
 
+/*MODAL WINDOW*/
+
+.backdrop {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateY(-165px);
+    background-color: rgba(46, 47, 66, 0.40);
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+                visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    
+}
+
+.modal {
+    position: absolute;
+    bottom: 13px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    min-height: 584px;
+    width: 408px;
+    border-radius: 4px;
+    background: var(--dairy, #FCFCFC);
+    box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.20),
+        0px 1px 3px 0px rgba(0, 0, 0, 0.12),
+        0px 1px 1px 0px rgba(0, 0, 0, 0.14);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+.close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    background-color: var(--cornflower);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.icon-modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    fill: var(--navy-blue);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.close:hover,
+.close:focus {
+    background-color: var(--ocean);
+    border: none;
+}
+
+.close:active {
+    background-color: var(--ocean);
+    border: 0;
+}
+
+.close:hover .icon-modal,
+.close:focus .icon-modal{
+    fill: var(--white);
+}
+
+.close:active .icon-modal {
+    fill: var(--white);
+}
 /*PORTFOLIO*/
 
 .main-page {
@@ -754,8 +752,8 @@ section{
     background-color: var(--cloud);
     box-shadow: none;
     cursor: pointer;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-                color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+                background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
                 border-color 250 ms cubic-bezier(0.4, 0, 0.2, 1),
                 box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
     padding: 12px 24px;
@@ -803,6 +801,8 @@ section{
         transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+
+
 /*OVERLAY*/
 
 .img-projects {
@@ -811,17 +811,6 @@ section{
 }
 
 .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    transform: translateY(100%);
-    background-color: var(--iris);
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.overlay-text {
     color: var(--cloud);
     font-size: 16px;
     font-family: Roboto;
@@ -836,6 +825,15 @@ section{
     padding-top: 40px;
     margin-left: auto;
     margin-right: auto;
+
+    position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transform: translateY(100%);
+        background-color: var(--iris);
+        transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project-link:hover {
@@ -846,6 +844,10 @@ section{
 
 .project-link:hover .overlay {
     transform: translateY(0);
+}
+
+.project-link:hover .text-portfolio {
+    transform: translateY(0%);
 }
 
 .project-about {
